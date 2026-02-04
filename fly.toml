@@ -1,0 +1,43 @@
+# fly.toml - Fly.io deployment configuration for ECG Digitizer Server
+# Deploy from the root ecg_app directory with: fly deploy
+#
+# Usage:
+#   cd /Users/pae2/Desktop/ecg_app
+#   fly deploy
+
+app = "ecg-digitizer"
+primary_region = "sjc"
+
+[build]
+  dockerfile = "Dockerfile.fly"
+
+[env]
+  FLASK_ENV = "production"
+  PORT = "8080"
+
+[http_service]
+  internal_port = 8080
+  force_https = true
+  auto_stop_machines = true
+  auto_start_machines = true
+  min_machines_running = 0
+
+  [http_service.concurrency]
+    type = "requests"
+    hard_limit = 25
+    soft_limit = 20
+
+[[vm]]
+  cpu_kind = "shared"
+  cpus = 4
+  memory_mb = 8192  # 8GB for PyTorch model + image processing
+
+[checks]
+  [checks.health]
+    grace_period = "120s"
+    interval = "30s"
+    method = "GET"
+    path = "/"
+    port = 8080
+    timeout = "10s"
+    type = "http"

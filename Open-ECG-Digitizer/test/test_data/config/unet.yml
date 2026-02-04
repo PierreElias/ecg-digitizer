@@ -1,0 +1,64 @@
+MODEL:
+  class_path: 'src.model.unet.UNet'
+  KWARGS:
+    num_in_channels: 3
+    num_out_channels: 4
+    depth: 1
+    dims: [1, 2]
+
+TRAIN:
+  COMPILE: False
+  CUDNN_BENCHMARK: True
+  STOPPER:
+    class_path: 'src.utils.EarlyStopper'
+    KWARGS:
+      metric: 'val_loss'
+      patience: 1
+      delta: 0
+  OPTIMIZER:
+    class_path: 'torch.optim.Adam'
+    KWARGS:
+      lr: 0.001
+  MIXED_PRECISION_SCALER:
+    class_path: 'torch.amp.GradScaler'
+    KWARGS: {}
+  LR_SCHEDULER:
+    class_path: 'src.utils.CosineToConstantLR'
+    KWARGS:
+      T_max: 10
+      eta_min_divisor: 10.0
+  CRITERION:
+    class_path: 'src.loss.loss.DiceFocalLoss'
+    KWARGS: {}
+  KWARGS:
+    epochs: 1
+    metrics: []
+    device: 'cpu'
+
+HYPERPARAMETER_SEARCH:
+  SCHEDULER:
+    class_path: 'ray.tune.schedulers.ASHAScheduler'
+    KWARGS:
+      metric: 'val_loss'
+      mode: 'min'
+      max_t: 3000
+      grace_period: 20
+      reduction_factor: 4
+  SEARCH_SPACE:
+
+DATALOADER:
+  class_path: 'torch.utils.data.DataLoader'
+  KWARGS:
+    batch_size: 1
+    shuffle: False
+
+DATASET:
+  class_path: 'src.dataset.ecg_scan.ECGScanDataset'
+  KWARGS:
+    data_path: '../../test/test_data/data/ecg_data'
+  TRAIN:
+    KWARGS: {}
+  VAL:
+    KWARGS: {}
+  TEST:
+    KWARGS: {}

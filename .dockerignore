@@ -1,0 +1,24 @@
+# Ignore large files and unnecessary directories for Fly.io deployment
+.git
+.gitignore
+*.pdf
+*.md
+ECGDigitizer
+validation_tests
+docs
+scripts
+__pycache__
+*.pyc
+*.pyo
+.DS_Store
+*.egg-info
+.pytest_cache
+.mypy_cache
+*.log
+
+# Exclude unnecessary Open-ECG-Digitizer files
+Open-ECG-Digitizer/test
+Open-ECG-Digitizer/assets
+Open-ECG-Digitizer/.git
+Open-ECG-Digitizer/*.md
+Open-ECG-Digitizer/format_and_check.sh

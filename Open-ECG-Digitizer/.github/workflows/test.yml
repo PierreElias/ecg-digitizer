@@ -1,0 +1,20 @@
+name: Run pytests
+on: [push]
+
+jobs:
+  test:
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python virtual environment and install tools
+        run: |
+          python3.12 -m venv venv
+          ./venv/bin/python -m ensurepip --upgrade
+          ./venv/bin/python -m pip install --upgrade pip
+          ./venv/bin/python -m pip install -r requirements.txt
+          ./venv/bin/python -m pip install pytest
+
+      - name: Run pytests
+        run: timeout 300 ./venv/bin/python -m pytest
+

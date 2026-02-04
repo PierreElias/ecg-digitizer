@@ -1,0 +1,875 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6A9217504DF8904E8CBAA2B1 /* DiagnosticUploadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F188A3484D33C338CCF5015 /* DiagnosticUploadView.swift */; };
+		8F4914F92F1F1EE800F9E94B /* onnxruntime in Frameworks */ = {isa = PBXBuildFile; productRef = 8F4914F82F1F1EE800F9E94B /* onnxruntime */; };
+		8F4914FB2F1F1EE800F9E94B /* onnxruntime_extensions in Frameworks */ = {isa = PBXBuildFile; productRef = 8F4914FA2F1F1EE800F9E94B /* onnxruntime_extensions */; };
+		APP001 /* ECGDigitizerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC001 /* ECGDigitizerApp.swift */; };
+		APP002 /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC002 /* DependencyContainer.swift */; };
+		APP003 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC003 /* ContentView.swift */; };
+		ASS001 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = RES001 /* Assets.xcassets */; };
+		ASS002 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = RES002 /* Preview Assets.xcassets */; };
+		DAT001 /* FileStorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC090 /* FileStorageManager.swift */; };
+		DAT002 /* ECGRecordingRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC091 /* ECGRecordingRepository.swift */; };
+		DOM001 /* ECGLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC010 /* ECGLayout.swift */; };
+		DOM002 /* ECGLead.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC011 /* ECGLead.swift */; };
+		DOM003 /* ProcessingParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC012 /* ProcessingParameters.swift */; };
+		DOM004 /* ECGRecording.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC013 /* ECGRecording.swift */; };
+		DOM005 /* ValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC014 /* ValidationError.swift */; };
+		DOM006 /* UseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC015 /* UseCases.swift */; };
+		INF001 /* ECGValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC020 /* ECGValidator.swift */; };
+		INF010 /* VisionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC030 /* VisionManager.swift */; };
+		INF011 /* ImagePreprocessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC031 /* ImagePreprocessor.swift */; };
+		INF012 /* WaveformExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC032 /* WaveformExtractor.swift */; };
+		INF013 /* SignalExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC033 /* SignalExtractor.swift */; };
+		INF014 /* GridSizeFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC034 /* GridSizeFinder.swift */; };
+		INF015 /* PerspectiveDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC035 /* PerspectiveDetector.swift */; };
+		INF016 /* ThinPlateSpline.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC036 /* ThinPlateSpline.swift */; };
+		INF017 /* SignalExtractorAdvanced.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC037 /* SignalExtractorAdvanced.swift */; };
+		INF018 /* HungarianAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC038 /* HungarianAlgorithm.swift */; };
+		INF019 /* Cropper.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC039 /* Cropper.swift */; };
+		INF020 /* GridDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC040 /* GridDetector.swift */; };
+		INF021 /* LayoutClassifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC041 /* LayoutClassifier.swift */; };		INF030 /* CameraManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC050 /* CameraManager.swift */; };
+		INF040 /* CSVExporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC060 /* CSVExporter.swift */; };
+		INF041 /* PDFExporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC061 /* PDFExporter.swift */; };
+		INF042 /* HL7Exporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC062 /* HL7Exporter.swift */; };
+		INF043 /* ShareManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC063 /* ShareManager.swift */; };
+		INF050 /* ECGAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC200 /* ECGAPIClient.swift */; };
+		INF051 /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC210 /* NetworkMonitor.swift */; };
+		INF060 /* OnDeviceECGProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC220 /* OnDeviceECGProcessor.swift */; };
+		INF061 /* OfflineQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC221 /* OfflineQueue.swift */; };
+		INF070 /* ONNXInference.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC230 /* ONNXInference.swift */; };
+		INF071 /* DiagnosticLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC231 /* DiagnosticLogger.swift */; };
+		INF072 /* DebugTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC232 /* DebugTestView.swift */; };		PRS001 /* CaptureFlowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC070 /* CaptureFlowView.swift */; };
+		PRS002 /* ParameterInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC071 /* ParameterInputView.swift */; };
+		PRS003 /* ProcessingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC072 /* ProcessingView.swift */; };
+		PRS004 /* ResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC073 /* ResultsView.swift */; };
+		PRS005 /* ReportsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC074 /* ReportsListView.swift */; };
+		PRS006 /* DiagnosticView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC130 /* DiagnosticView.swift */; };
+		PRS007 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC140 /* SettingsView.swift */; };
+		PRS008 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC075 /* HomeView.swift */; };
+		PRS010 /* ECGWaveformView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC080 /* ECGWaveformView.swift */; };
+		PRS020 /* DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC110 /* DesignSystem.swift */; };
+		PRS030 /* CommonComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC120 /* CommonComponents.swift */; };
+		PRS031 /* ImageCropView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC121 /* ImageCropView.swift */; };
+		RES010 /* ECGSegmentation.onnx in Resources */ = {isa = PBXBuildFile; fileRef = MDL001 /* ECGSegmentation.onnx */; };
+		RES011 /* ECGLeadIdentifier.onnx in Resources */ = {isa = PBXBuildFile; fileRef = MDL002 /* ECGLeadIdentifier.onnx */; };
+		RES012 /* ECGSegmentation_dynamic.onnx in Resources */ = {isa = PBXBuildFile; fileRef = MDL003 /* ECGSegmentation_dynamic.onnx */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		4F188A3484D33C338CCF5015 /* DiagnosticUploadView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DiagnosticUploadView.swift; sourceTree = "<group>"; };
+		8F4914F52F1ED8AD00F9E94B /* ECGDigitizer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ECGDigitizer.entitlements; sourceTree = "<group>"; };
+		8F4914F62F1ED8E800F9E94B /* ECGDigitizerRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ECGDigitizerRelease.entitlements; sourceTree = "<group>"; };
+		INF100 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		MDL001 /* ECGSegmentation.onnx */ = {isa = PBXFileReference; lastKnownFileType = file; path = ECGSegmentation.onnx; sourceTree = "<group>"; };
+		MDL002 /* ECGLeadIdentifier.onnx */ = {isa = PBXFileReference; lastKnownFileType = file; path = ECGLeadIdentifier.onnx; sourceTree = "<group>"; };
+		MDL003 /* ECGSegmentation_dynamic.onnx */ = {isa = PBXFileReference; lastKnownFileType = file; path = ECGSegmentation_dynamic.onnx; sourceTree = "<group>"; };
+		PRD001 /* ECGDigitizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ECGDigitizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		RES001 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		RES002 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		SRC001 /* ECGDigitizerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ECGDigitizerApp.swift; sourceTree = "<group>"; };
+		SRC002 /* DependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainer.swift; sourceTree = "<group>"; };
+		SRC003 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		SRC010 /* ECGLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ECGLayout.swift; sourceTree = "<group>"; };
+		SRC011 /* ECGLead.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ECGLead.swift; sourceTree = "<group>"; };
+		SRC012 /* ProcessingParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessingParameters.swift; sourceTree = "<group>"; };
+		SRC013 /* ECGRecording.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ECGRecording.swift; sourceTree = "<group>"; };
+		SRC014 /* ValidationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationError.swift; sourceTree = "<group>"; };
+		SRC015 /* UseCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCases.swift; sourceTree = "<group>"; };
+		SRC020 /* ECGValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ECGValidator.swift; sourceTree = "<group>"; };
+		SRC030 /* VisionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionManager.swift; sourceTree = "<group>"; };
+		SRC031 /* ImagePreprocessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePreprocessor.swift; sourceTree = "<group>"; };
+		SRC032 /* WaveformExtractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveformExtractor.swift; sourceTree = "<group>"; };
+		SRC033 /* SignalExtractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignalExtractor.swift; sourceTree = "<group>"; };
+		SRC034 /* GridSizeFinder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridSizeFinder.swift; sourceTree = "<group>"; };
+		SRC035 /* PerspectiveDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerspectiveDetector.swift; sourceTree = "<group>"; };
+		SRC036 /* ThinPlateSpline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThinPlateSpline.swift; sourceTree = "<group>"; };
+		SRC037 /* SignalExtractorAdvanced.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignalExtractorAdvanced.swift; sourceTree = "<group>"; };
+		SRC038 /* HungarianAlgorithm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HungarianAlgorithm.swift; sourceTree = "<group>"; };
+		SRC039 /* Cropper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cropper.swift; sourceTree = "<group>"; };
+		SRC040 /* GridDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridDetector.swift; sourceTree = "<group>"; };
+		SRC041 /* LayoutClassifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutClassifier.swift; sourceTree = "<group>"; };		SRC050 /* CameraManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraManager.swift; sourceTree = "<group>"; };
+		SRC060 /* CSVExporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSVExporter.swift; sourceTree = "<group>"; };
+		SRC061 /* PDFExporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFExporter.swift; sourceTree = "<group>"; };
+		SRC062 /* HL7Exporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HL7Exporter.swift; sourceTree = "<group>"; };
+		SRC063 /* ShareManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareManager.swift; sourceTree = "<group>"; };
+		SRC070 /* CaptureFlowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureFlowView.swift; sourceTree = "<group>"; };
+		SRC071 /* ParameterInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterInputView.swift; sourceTree = "<group>"; };
+		SRC072 /* ProcessingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessingView.swift; sourceTree = "<group>"; };
+		SRC073 /* ResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsView.swift; sourceTree = "<group>"; };
+		SRC074 /* ReportsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportsListView.swift; sourceTree = "<group>"; };
+		SRC075 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		SRC080 /* ECGWaveformView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ECGWaveformView.swift; sourceTree = "<group>"; };
+		SRC090 /* FileStorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileStorageManager.swift; sourceTree = "<group>"; };
+		SRC091 /* ECGRecordingRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ECGRecordingRepository.swift; sourceTree = "<group>"; };
+		SRC110 /* DesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystem.swift; sourceTree = "<group>"; };
+		SRC120 /* CommonComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonComponents.swift; sourceTree = "<group>"; };
+		SRC121 /* ImageCropView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCropView.swift; sourceTree = "<group>"; };
+		SRC130 /* DiagnosticView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiagnosticView.swift; sourceTree = "<group>"; };
+		SRC140 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		SRC200 /* ECGAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ECGAPIClient.swift; sourceTree = "<group>"; };
+		SRC210 /* NetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
+		SRC220 /* OnDeviceECGProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnDeviceECGProcessor.swift; sourceTree = "<group>"; };
+		SRC221 /* OfflineQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineQueue.swift; sourceTree = "<group>"; };
+		SRC230 /* ONNXInference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ONNXInference.swift; sourceTree = "<group>"; };
+		SRC231 /* DiagnosticLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiagnosticLogger.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FRW001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8F4914FB2F1F1EE800F9E94B /* onnxruntime_extensions in Frameworks */,
+				8F4914F92F1F1EE800F9E94B /* onnxruntime in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5D43DDDF78F74F75A22368D7 /* Math */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Math;
+			path = Infrastructure/Math;
+			sourceTree = "<group>";
+		};
+		GRP001 /* ECGDigitizer */ = {
+			isa = PBXGroup;
+			children = (
+				8F4914F62F1ED8E800F9E94B /* ECGDigitizerRelease.entitlements */,
+				8F4914F52F1ED8AD00F9E94B /* ECGDigitizer.entitlements */,
+				GRP010 /* App */,
+				GRP020 /* Domain */,
+				GRP030 /* Infrastructure */,
+				GRP040 /* Presentation */,
+				GRP050 /* Data */,
+				GRP060 /* Resources */,
+			);
+			path = ECGDigitizer;
+			sourceTree = "<group>";
+		};
+		GRP002 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				PRD001 /* ECGDigitizer.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		GRP010 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				SRC001 /* ECGDigitizerApp.swift */,
+				SRC002 /* DependencyContainer.swift */,
+				SRC003 /* ContentView.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		GRP020 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				GRP021 /* Models */,
+				GRP022 /* UseCases */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		GRP021 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				SRC010 /* ECGLayout.swift */,
+				SRC011 /* ECGLead.swift */,
+				SRC012 /* ProcessingParameters.swift */,
+				SRC013 /* ECGRecording.swift */,
+				SRC014 /* ValidationError.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		GRP022 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				SRC015 /* UseCases.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		GRP030 /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				GRP031 /* Validation */,
+				F051FD67B3004B2CABE6EA69 /* Math */,
+				GRP032 /* ImageProcessing */,
+				GRP033 /* MachineLearning */,
+				GRP034 /* Camera */,
+				GRP035 /* Export */,
+				GRP036 /* Network */,
+				GRP037 /* Processing */,
+				GRP038 /* Testing */,
+				5D43DDDF78F74F75A22368D7 /* Math */,
+			);
+			path = Infrastructure;
+			sourceTree = "<group>";
+		};
+		GRP031 /* Validation */ = {
+			isa = PBXGroup;
+			children = (
+				SRC020 /* ECGValidator.swift */,
+			);
+			path = Validation;
+			sourceTree = "<group>";
+		};
+		GRP032 /* ImageProcessing */ = {
+			isa = PBXGroup;
+			children = (
+				SRC030 /* VisionManager.swift */,
+				SRC031 /* ImagePreprocessor.swift */,
+				SRC032 /* WaveformExtractor.swift */,
+				SRC033 /* SignalExtractor.swift */,
+				SRC034 /* GridSizeFinder.swift */,
+				SRC035 /* PerspectiveDetector.swift */,
+				SRC036 /* ThinPlateSpline.swift */,
+				SRC037 /* SignalExtractorAdvanced.swift */,
+				SRC038 /* HungarianAlgorithm.swift */,
+			
+			path = ImageProcessing;
+			sourceTree = "<group>";
+		};
+		F051FD67B3004B2CABE6EA69 /* Math */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Math;
+			sourceTree = "<group>";
+		};
+		GRP033 /* MachineLearning */ = {
+			isa = PBXGroup;
+			children = (
+				SRC040 /* GridDetector.swift */,
+				SRC041 /* LayoutClassifier.swift */,
+				SRC230 /* ONNXInference.swift */,
+			);
+			path = MachineLearning;
+			sourceTree = "<group>";
+		};
+		GRP034 /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				SRC050 /* CameraManager.swift */,
+			);
+			path = Camera;
+			sourceTree = "<group>";
+		};
+		GRP035 /* Export */ = {
+			isa = PBXGroup;
+			children = (
+				SRC060 /* CSVExporter.swift */,
+				SRC061 /* PDFExporter.swift */,
+				SRC062 /* HL7Exporter.swift */,
+				SRC063 /* ShareManager.swift */,
+			);
+			path = Export;
+			sourceTree = "<group>";
+		};
+		GRP036 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				SRC200 /* ECGAPIClient.swift */,
+				SRC210 /* NetworkMonitor.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		GRP037 /* Processing */ = {
+			isa = PBXGroup;
+			children = (
+				SRC220 /* OnDeviceECGProcessor.swift */,
+				SRC221 /* OfflineQueue.swift */,
+			);
+			path = Processing;
+			sourceTree = "<group>";
+		};
+		GRP038 /* Testing */ = {
+			isa = PBXGroup;
+			children = (
+				SRC231 /* DiagnosticLogger.swift */,
+			);
+			path = Testing;
+			sourceTree = "<group>";
+		};
+		GRP039 /* Debug */ = {
+			isa = PBXGroup;
+			children = (
+				SRC232 /* DebugTestView.swift */,
+			);
+			path = Debug;
+			sourceTree = "<group>";
+		};
+		GRP040 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				GRP041 /* Flows */,
+				GRP042 /* Components */,
+				GRP048 /* Design */,
+				GRP039 /* Debug */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		GRP041 /* Flows */ = {
+			isa = PBXGroup;
+			children = (
+				GRP056 /* Home */,
+				GRP043 /* Camera */,
+				GRP044 /* Parameters */,
+				GRP045 /* Processing */,
+				GRP046 /* Results */,
+				GRP047 /* ReportsList */,
+				GRP049 /* Diagnostic */,
+				GRP055 /* Settings */,
+			);
+			path = Flows;
+			sourceTree = "<group>";
+		};
+		GRP042 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				SRC080 /* ECGWaveformView.swift */,
+				SRC120 /* CommonComponents.swift */,
+				SRC121 /* ImageCropView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		GRP043 /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				SRC070 /* CaptureFlowView.swift */,
+			);
+			path = Camera;
+			sourceTree = "<group>";
+		};
+		GRP044 /* Parameters */ = {
+			isa = PBXGroup;
+			children = (
+				SRC071 /* ParameterInputView.swift */,
+			);
+			path = Parameters;
+			sourceTree = "<group>";
+		};
+		GRP045 /* Processing */ = {
+			isa = PBXGroup;
+			children = (
+				SRC072 /* ProcessingView.swift */,
+			);
+			path = Processing;
+			sourceTree = "<group>";
+		};
+		GRP046 /* Results */ = {
+			isa = PBXGroup;
+			children = (
+				SRC073 /* ResultsView.swift */,
+				4F188A3484D33C338CCF5015 /* DiagnosticUploadView.swift */,
+			);
+			path = Results;
+			sourceTree = "<group>";
+		};
+		GRP047 /* ReportsList */ = {
+			isa = PBXGroup;
+			children = (
+				SRC074 /* ReportsListView.swift */,
+			);
+			path = ReportsList;
+			sourceTree = "<group>";
+		};
+		GRP048 /* Design */ = {
+			isa = PBXGroup;
+			children = (
+				SRC110 /* DesignSystem.swift */,
+			);
+			path = Design;
+			sourceTree = "<group>";
+		};
+		GRP049 /* Diagnostic */ = {
+			isa = PBXGroup;
+			children = (
+				SRC130 /* DiagnosticView.swift */,
+			);
+			path = Diagnostic;
+			sourceTree = "<group>";
+		};
+		GRP050 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				GRP051 /* DataSources */,
+				GRP052 /* Repositories */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		GRP051 /* DataSources */ = {
+			isa = PBXGroup;
+			children = (
+				GRP053 /* Local */,
+			);
+			path = DataSources;
+			sourceTree = "<group>";
+		};
+		GRP052 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				SRC091 /* ECGRecordingRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		GRP053 /* Local */ = {
+			isa = PBXGroup;
+			children = (
+				SRC090 /* FileStorageManager.swift */,
+			);
+			path = Local;
+			sourceTree = "<group>";
+		};
+		GRP055 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				SRC140 /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		GRP056 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				SRC075 /* HomeView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		GRP060 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				RES001 /* Assets.xcassets */,
+				INF100 /* Info.plist */,
+				GRP061 /* Preview Content */,
+				GRP062 /* Models */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		GRP061 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				RES002 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		GRP062 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				MDL001 /* ECGSegmentation.onnx */,
+				MDL002 /* ECGLeadIdentifier.onnx */,
+				MDL003 /* ECGSegmentation_dynamic.onnx */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		ROOT = {
+			isa = PBXGroup;
+			children = (
+				GRP001 /* ECGDigitizer */,
+				GRP002 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		TGT001 /* ECGDigitizer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CFG003 /* Build configuration list for PBXNativeTarget "ECGDigitizer" */;
+			buildPhases = (
+				SRC100 /* Sources */,
+				FRW001 /* Frameworks */,
+				RSC001 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ECGDigitizer;
+			packageProductDependencies = (
+				8F4914F82F1F1EE800F9E94B /* onnxruntime */,
+				8F4914FA2F1F1EE800F9E94B /* onnxruntime_extensions */,
+			);
+			productName = ECGDigitizer;
+			productReference = PRD001 /* ECGDigitizer.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		PRJ001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					TGT001 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+				};
+			};
+			buildConfigurationList = CFG001 /* Build configuration list for PBXProject "ECGDigitizer" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = ROOT;
+			packageReferences = (
+				8F4914F72F1F1EE800F9E94B /* XCRemoteSwiftPackageReference "onnxruntime-swift-package-manager" */,
+			);
+			productRefGroup = GRP002 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				TGT001 /* ECGDigitizer */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		RSC001 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ASS002 /* Preview Assets.xcassets in Resources */,
+				ASS001 /* Assets.xcassets in Resources */,
+				RES010 /* ECGSegmentation.onnx in Resources */,
+				RES011 /* ECGLeadIdentifier.onnx in Resources */,
+				RES012 /* ECGSegmentation_dynamic.onnx in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		SRC100 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				APP001 /* ECGDigitizerApp.swift in Sources */,
+				APP002 /* DependencyContainer.swift in Sources */,
+				APP003 /* ContentView.swift in Sources */,
+				DOM001 /* ECGLayout.swift in Sources */,
+				DOM002 /* ECGLead.swift in Sources */,
+				DOM003 /* ProcessingParameters.swift in Sources */,
+				DOM004 /* ECGRecording.swift in Sources */,
+				DOM005 /* ValidationError.swift in Sources */,
+				DOM006 /* UseCases.swift in Sources */,
+				INF001 /* ECGValidator.swift in Sources */,
+				INF010 /* VisionManager.swift in Sources */,
+				INF011 /* ImagePreprocessor.swift in Sources */,
+				INF012 /* WaveformExtractor.swift in Sources */,
+				INF013 /* SignalExtractor.swift in Sources */,
+				INF014 /* GridSizeFinder.swift in Sources */,
+				INF015 /* PerspectiveDetector.swift in Sources */,
+				INF016 /* ThinPlateSpline.swift in Sources */,
+				INF017 /* SignalExtractorAdvanced.swift in Sources */,
+				INF018 /* HungarianAlgorithm.swift in Sources */,
+				INF019 /* Cropper.swift in Sources */,
+				INF020 /* GridDetector.swift in Sources */,
+				INF021 /* LayoutClassifier.swift in Sources */,
+				INF030 /* CameraManager.swift in Sources */,
+				INF040 /* CSVExporter.swift in Sources */,
+				INF041 /* PDFExporter.swift in Sources */,
+				INF042 /* HL7Exporter.swift in Sources */,
+				INF043 /* ShareManager.swift in Sources */,
+				PRS001 /* CaptureFlowView.swift in Sources */,
+				PRS002 /* ParameterInputView.swift in Sources */,
+				PRS003 /* ProcessingView.swift in Sources */,
+				PRS004 /* ResultsView.swift in Sources */,
+				PRS005 /* ReportsListView.swift in Sources */,
+				PRS006 /* DiagnosticView.swift in Sources */,
+				PRS007 /* SettingsView.swift in Sources */,
+				PRS008 /* HomeView.swift in Sources */,
+				PRS010 /* ECGWaveformView.swift in Sources */,
+				PRS020 /* DesignSystem.swift in Sources */,
+				PRS030 /* CommonComponents.swift in Sources */,
+				PRS031 /* ImageCropView.swift in Sources */,
+				INF050 /* ECGAPIClient.swift in Sources */,
+				INF051 /* NetworkMonitor.swift in Sources */,
+				INF060 /* OnDeviceECGProcessor.swift in Sources */,
+				INF061 /* OfflineQueue.swift in Sources */,
+				INF070 /* ONNXInference.swift in Sources */,
+				INF071 /* DiagnosticLogger.swift in Sources */,
+				INF072 /* DebugTestView.swift in Sources */,
+				DAT001 /* FileStorageManager.swift in Sources */,
+				DAT002 /* ECGRecordingRepository.swift in Sources */,
+			
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		CFG010 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CFG011 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CFG020 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ECGDigitizer/ECGDigitizer.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
+				DEVELOPMENT_ASSET_PATHS = "\"ECGDigitizer/Resources/Preview Content\"";
+				DEVELOPMENT_TEAM = BVXXPP3U4C;
+				"ENABLE_HARDENED_RUNTIME[sdk=macosx*]" = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ECGDigitizer/Resources/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = EchoNext;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.medical";
+				INFOPLIST_KEY_NSCameraUsageDescription = "ECG Digitizer needs camera access to capture ECG images";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "ECG Digitizer needs photo library access to import ECG images";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ecgdigitizer.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CFG021 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ECGDigitizer/ECGDigitizerRelease.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
+				DEVELOPMENT_ASSET_PATHS = "\"ECGDigitizer/Resources/Preview Content\"";
+				DEVELOPMENT_TEAM = BVXXPP3U4C;
+				"ENABLE_HARDENED_RUNTIME[sdk=macosx*]" = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ECGDigitizer/Resources/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = EchoNext;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.medical";
+				INFOPLIST_KEY_NSCameraUsageDescription = "ECG Digitizer needs camera access to capture ECG images";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "ECG Digitizer needs photo library access to import ECG images";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ecgdigitizer.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CFG001 /* Build configuration list for PBXProject "ECGDigitizer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CFG010 /* Debug */,
+				CFG011 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CFG003 /* Build configuration list for PBXNativeTarget "ECGDigitizer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CFG020 /* Debug */,
+				CFG021 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8F4914F72F1F1EE800F9E94B /* XCRemoteSwiftPackageReference "onnxruntime-swift-package-manager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/microsoft/onnxruntime-swift-package-manager.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.20.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8F4914F82F1F1EE800F9E94B /* onnxruntime */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8F4914F72F1F1EE800F9E94B /* XCRemoteSwiftPackageReference "onnxruntime-swift-package-manager" */;
+			productName = onnxruntime;
+		};
+		8F4914FA2F1F1EE800F9E94B /* onnxruntime_extensions */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8F4914F72F1F1EE800F9E94B /* XCRemoteSwiftPackageReference "onnxruntime-swift-package-manager" */;
+			productName = onnxruntime_extensions;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = PRJ001 /* Project object */;
+}

@@ -1,0 +1,65 @@
+MODEL:
+  class_path: 'src.model.inference_wrapper.InferenceWrapper'
+  KWARGS:
+    config:
+      SIGNAL_EXTRACTOR:
+        class_path: 'src.model.signal_extractor.SignalExtractor'
+        KWARGS: {}
+
+      PERSPECTIVE_DETECTOR:
+        class_path: 'src.model.perspective_detector.PerspectiveDetector'
+        KWARGS:
+          num_thetas: 250
+
+      DEWARPER:
+        class_path: 'src.model.dewarper.Dewarper'
+        KWARGS:
+          abs_peak_threshold: 0.1
+
+      SEGMENTATION_MODEL:
+        class_path: 'src.model.unet.UNet'
+        weight_path: './weights/unet_weights_07072025.pt'
+        KWARGS:
+          num_in_channels: 3
+          num_out_channels: 4
+          dims: [32, 64, 128, 256, 320, 320, 320, 320]
+          depth: 2
+
+      CROPPER:
+        class_path: 'src.model.cropper.Cropper'
+        KWARGS:
+          granularity: 80
+          percentiles: [0.02, 0.98]
+          alpha: 0.85
+
+      PIXEL_SIZE_FINDER:
+        class_path: 'src.model.pixel_size_finder.PixelSizeFinder'
+        KWARGS:
+          min_number_of_grid_lines: 30 # these define the expected number of grid lines on the paper (major vertical lines)
+          max_number_of_grid_lines: 70
+          lower_grid_line_factor: 0.5
+
+      LAYOUT_IDENTIFIER:
+        class_path: 'src.model.lead_identifier.LeadIdentifier'
+        config_path: 'src/config/lead_layouts_george-moody-2024.yml' # this file defines the set of possible layouts 
+        unet_config_path: 'src/config/lead_name_unet.yml'
+        unet_weight_path: './weights/lead_name_unet_weights_07072025.pt'
+        KWARGS:
+          debug: false
+          device: 'cuda:0'
+          possibly_flipped: false
+          target_num_samples: 10000 # this is (time * desired sample rate)
+          required_valid_samples: 2 # This should be roughly the number of expected rows divided by two
+          
+    device: 'cuda:0'
+    resample_size: 3000 # this can be changed down to 2000 depending on GPU memory
+    rotate_on_resample: true
+    enable_timing: false
+    apply_dewarping: false
+DATA:
+  images_path: './gm2024' # change this
+  image_extensions: ['.png', '.jpg', '.jpeg', '.JPG'] # set this (maybe)
+  save_mode: 'all' # one of ['all', 'timeseries_only', 'png_only']
+  layout_should_include_substring: false
+  output_path: 'sandbox/inference_output_gm2024' # change this 
+  clear_output_dir_if_exists: false # delete all files in output_path if it exists, before running inference

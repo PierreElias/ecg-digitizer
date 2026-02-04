@@ -1,0 +1,42 @@
+# Dockerfile.fly - Fly.io deployment for ECG Digitizer
+# Build from root ecg_app directory: fly deploy
+
+FROM python:3.10-slim
+
+WORKDIR /app
+
+# Install system dependencies (using newer package names for Debian Trixie)
+RUN apt-get update && apt-get install -y \
+    libgl1 \
+    libglib2.0-0 \
+    libsm6 \
+    libxext6 \
+    libxrender1 \
+    git \
+    && rm -rf /var/lib/apt/lists/*
+
+# Copy requirements first for caching
+COPY web/requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt && \
+    # Remove unnecessary files to reduce image size
+    find /usr/local -type d -name '__pycache__' -exec rm -rf {} + 2>/dev/null || true && \
+    find /usr/local -type d -name 'tests' -exec rm -rf {} + 2>/dev/null || true && \
+    find /usr/local -type d -name 'test' -exec rm -rf {} + 2>/dev/null || true && \
+    rm -rf /root/.cache/pip
+
+# Copy the Open-ECG-Digitizer source (test/assets excluded via .dockerignore)
+COPY Open-ECG-Digitizer /app/Open-ECG-Digitizer
+
+# Copy web app
+COPY web /app/web
+
+WORKDIR /app/web
+
+# Fly.io uses port 8080
+EXPOSE 8080
+
+ENV PORT=8080
+ENV FLASK_ENV=production
+
+# Run with gunicorn
+CMD ["gunicorn", "--bind", "0.0.0.0:8080", "--timeout", "300", "--workers", "1", "app:app"]

@@ -1,0 +1,122 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+# Xcode
+*.xcuserstate
+*.xcworkspace/xcuserdata/
+xcuserdata/
+DerivedData/
+*.moved-aside
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+*.xccheckout
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# Swift Package Manager
+.build/
+.swiftpm/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Virtual environments
+venv/
+ENV/
+env/
+.venv/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Model files (large - use Git LFS)
+*.onnx
+*.onnx.data
+*.pt
+*.pth
+
+# Logs
+*.log
+logs/
+
+# Test outputs
+test_images/
+output/
+temp/
+*.tmp
+
+# Local testing
+debug_output/
+test_reports/
+
+# Fly.io
+.fly/
+
+# Claude Code
+.claude/
+
+# Credentials (never commit)
+*.pem
+*.key
+credentials.json
+secrets.json
+.env
+.env.local
+
+# Large PDFs
+*.pdf
+
+# Large datasets and images (not for git)
+datasets/
+ecg_images/
+ecg-image-kit/
+models/
+diagnostics/
+validation_tests/
+docs/
+
+# Generated markdown docs
+*.md
+!README.md
+!DEPLOY.md
